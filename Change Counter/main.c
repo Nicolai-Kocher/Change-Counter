@@ -30,56 +30,57 @@ int main(){
     printf("Your change is: %.2f\n", change_due);
 
     //change rounded
-    double R_change = (change_due / 0.05) * 0.05;
-    printf("Rounded change is: %.2f\n", R_change);
+    int nNickles = (int) round(change_due * 20 + 1.0e-6);
+    double rChange = nNickles * 0.05 + 1.0e-6;
+    printf("Rounded change is: %.2f\n", rChange);
 
     float twenty_bill = 20;
-    int numOfTwentyBill = change_due / twenty_bill;
+    int numOfTwentyBill = rChange / twenty_bill;
     //change in 20 dollar bills
     printf("Twenties: %d\n", numOfTwentyBill);
-    change_due = change_due - twenty_bill * numOfTwentyBill;
+    rChange = rChange - twenty_bill * numOfTwentyBill;
 
     float ten_bill = 10;
-    int numOfTenBill = change_due / ten_bill;
+    int numOfTenBill = rChange / ten_bill;
     //change in 10 dollar bills
     printf("Tens: %d\n", numOfTenBill);
-    change_due = change_due - ten_bill * numOfTenBill;
+    rChange = rChange - ten_bill * numOfTenBill;
 
     float five_bill = 5;
-    int numOfFiveBill = change_due / five_bill;
+    int numOfFiveBill = rChange / five_bill;
     //change in 5 dollar bills
     printf("Fives: %d\n", numOfFiveBill);
-    change_due = change_due - five_bill * numOfFiveBill;
+    rChange = rChange - five_bill * numOfFiveBill;
 
     float toonie = 2;
-    int numOfToonie = change_due / toonie;
+    int numOfToonie = rChange / toonie;
     //change in toonies
     printf("Toonies: %d\n", numOfToonie);
-    change_due = change_due - toonie * numOfToonie;
+    rChange = rChange - toonie * numOfToonie;
 
     float loonie = 1;
-    int numOfLoonie = change_due / loonie;
+    int numOfLoonie = rChange / loonie;
     //change in loonies
     printf("Loonies: %d\n", numOfLoonie);
-    change_due = change_due - loonie * numOfLoonie;
+    rChange = rChange - loonie * numOfLoonie;
 
     float quarter = 0.25;
-    int numOfQuarter = change_due / quarter;
+    int numOfQuarter = rChange / quarter;
     //change in quarters
     printf("Quarters: %d\n", numOfQuarter);
-    change_due = change_due - quarter * numOfQuarter;
+    rChange = rChange - quarter * numOfQuarter;
 
     float dime = 0.1;
-    int numOfDime = change_due / dime;
+    int numOfDime = rChange / dime;
     //change in dimes
     printf("Dimes: %d\n", numOfDime);
-    change_due = change_due - dime * numOfDime;
+    rChange = rChange - dime * numOfDime;
 
     float nickle = 0.05;
-    int numOfNickle = change_due / nickle;
+    int numOfNickle = rChange / nickle;
     //change in nickles
     printf("Nickles: %d\n", numOfNickle);
-    change_due = change_due - nickle * numOfNickle;
+    rChange = rChange - nickle * numOfNickle;
 
     return 0;
 }
